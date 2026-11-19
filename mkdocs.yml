@@ -1,0 +1,51 @@
+site_name: HSP Developer Docs
+site_description: Rust design and delivery guide for High Speed Projection
+repo_url: https://github.com/TorMaMe/ai_hsp_docs
+repo_name: TorMaMe/ai_hsp_docs
+docs_dir: docs
+site_dir: site
+strict: true
+theme:
+  name: material
+  language: en
+  font: false
+  palette:
+    scheme: slate
+    primary: teal
+    accent: teal
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+validation:
+  nav:
+    omitted_files: warn
+  links:
+    anchors: warn
+    unrecognized_links: warn
+nav:
+  - Overview: index.md
+  - Design:
+      - Architecture: architecture.md
+      - Data & API contracts: contracts.md
+      - Modal inference: inference.md
+      - VideoPsalm integration: videopsalm.md
+  - Product:
+      - Interface & settings: interface.md
+      - Delivery & acceptance: delivery.md
+  - Decisions & references: decisions.md
